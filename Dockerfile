@@ -22,5 +22,5 @@ COPY . .
 ENV PORT=10000
 EXPOSE $PORT
 
-# Run FastAPI from inside Combined_App so relative imports (src/, app/) resolve correctly
-CMD sh -c "cd /app/Combined_App && uvicorn main:app --host 0.0.0.0 --port $PORT"
+# Command to run the Streamlit app
+CMD streamlit run Combined_App/app.py --server.port $PORT --server.address 0.0.0.0 --server.enableCORS false --server.enableXsrfProtection false --server.headless true

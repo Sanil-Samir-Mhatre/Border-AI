@@ -1,0 +1,17 @@
+streamlit
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+opencv-python-headless
+kagglehub
+pillow
+networkx
+xgboost
+easyocr
+torch
+torchvision
+fastapi
+uvicorn[standard]
+python-multipart
