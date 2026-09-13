@@ -22,5 +22,5 @@ COPY . .
 ENV PORT=10000
 EXPOSE $PORT
 
-# Run FastAPI with uvicorn
-CMD uvicorn Combined_App.main:app --host 0.0.0.0 --port $PORT
+# Run FastAPI from inside Combined_App so relative imports (src/, app/) resolve correctly
+CMD sh -c "cd /app/Combined_App && uvicorn main:app --host 0.0.0.0 --port $PORT"

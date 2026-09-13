@@ -1,0 +1,21 @@
+# Python virtual environments
+Mark1/venv/
+mark2/venv/
+**/venv/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Git
+.git/
+.gitignore
+
+# Large files / data
+data/
+*.pptx
+*.pdf
+Presentation_Images/
