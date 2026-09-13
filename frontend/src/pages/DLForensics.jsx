@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { UploadCloud, Loader2, AlertTriangle, ShieldCheck } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function DLForensics() {
   const [file, setFile] = useState(null);
@@ -38,7 +39,7 @@ export default function DLForensics() {
     const formData = new FormData();
     formData.append('file', file);
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/dl-forensics`, formData, {
+      const response = await axios.post(`${API_BASE_URL}/api/dl-forensics`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       clearInterval(progressInterval);

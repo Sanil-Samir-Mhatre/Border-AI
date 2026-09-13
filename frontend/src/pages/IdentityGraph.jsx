@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Network, AlertTriangle, Loader2 } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function IdentityGraph() {
   const [graphImg, setGraphImg] = useState(null);
@@ -10,7 +11,7 @@ export default function IdentityGraph() {
   useEffect(() => {
     const fetchGraph = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/identity-graph`);
+        const response = await axios.get(`${API_BASE_URL}/api/identity-graph`);
         setGraphImg(response.data.image);
       } catch (err) {
         setError(err.message);

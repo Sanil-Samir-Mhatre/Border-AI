@@ -1,5 +1,6 @@
 import React from 'react';
 import { FileCheck } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function RealPassport() { 
   return (
@@ -10,7 +11,7 @@ export default function RealPassport() {
       </div>
       <div className="card">
         <iframe 
-          src={`${import.meta.env.VITE_API_URL}/static/real_passport_app.pdf`} 
+          src={`${API_BASE_URL}/static/real_passport_app.pdf`} 
           width="100%" 
           height="800px" 
           style={{ border: 'none', borderRadius: '8px' }}

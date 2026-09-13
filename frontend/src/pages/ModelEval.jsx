@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Activity, Loader2, Play } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function ModelEval() {
   const [loading, setLoading] = useState(false);
@@ -10,7 +11,7 @@ export default function ModelEval() {
     setLoading(true);
     setMessage('');
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/train`);
+      const response = await axios.post(`${API_BASE_URL}/api/train`);
       setMessage(response.data.message || 'Training completed successfully!');
     } catch (err) {
       setMessage(err.response?.data?.detail || err.message);
@@ -72,17 +73,17 @@ export default function ModelEval() {
       <div className="grid-2" style={{ marginBottom: '24px' }}>
         <div className="card">
           <h3>Mark 1: Random Forest CM</h3>
-          <img src={`${import.meta.env.VITE_API_URL}/static/CM_Mark1_RandomForest.png`} alt="CM Random Forest" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
+          <img src={`${API_BASE_URL}/static/CM_Mark1_RandomForest.png`} alt="CM Random Forest" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
         </div>
         <div className="card">
           <h3>Mark 2: ResNet50 CM</h3>
-          <img src={`${import.meta.env.VITE_API_URL}/static/CM_Mark2_ResNet50.png`} alt="CM ResNet50" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
+          <img src={`${API_BASE_URL}/static/CM_Mark2_ResNet50.png`} alt="CM ResNet50" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
         </div>
       </div>
 
       <div className="card">
         <h3>Deep Learning Training History</h3>
-        <img src={`${import.meta.env.VITE_API_URL}/static/training_history.png`} alt="Training History" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
+        <img src={`${API_BASE_URL}/static/training_history.png`} alt="Training History" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
       </div>
     </div>
   );

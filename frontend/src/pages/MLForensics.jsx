@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { UploadCloud, Loader2, AlertTriangle, CheckCircle, Info, ScanLine } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function MLForensics() {
   const [file, setFile] = useState(null);
@@ -40,7 +41,7 @@ export default function MLForensics() {
     formData.append('file', file);
     
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/ml-forensics`, formData, {
+      const response = await axios.post(`${API_BASE_URL}/api/ml-forensics`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       clearInterval(progressInterval);
