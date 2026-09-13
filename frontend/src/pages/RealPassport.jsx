@@ -10,7 +10,7 @@ export default function RealPassport() {
       </div>
       <div className="card">
         <iframe 
-          src="http://localhost:8000/static/real_passport_app.pdf" 
+          src={`${import.meta.env.VITE_API_URL}/static/real_passport_app.pdf`} 
           width="100%" 
           height="800px" 
           style={{ border: 'none', borderRadius: '8px' }}

@@ -38,7 +38,7 @@ export default function DLForensics() {
     const formData = new FormData();
     formData.append('file', file);
     try {
-      const response = await axios.post('http://localhost:8000/api/dl-forensics', formData, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/dl-forensics`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       clearInterval(progressInterval);

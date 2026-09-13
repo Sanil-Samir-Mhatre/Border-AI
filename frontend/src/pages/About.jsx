@@ -11,12 +11,12 @@ export default function About() {
 
       <div className="card" style={{ marginBottom: '24px' }}>
         <h3>User Journey</h3>
-        <img src="http://localhost:8000/static/User_Journey.png" alt="User Journey" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
+        <img src={`${import.meta.env.VITE_API_URL}/static/User_Journey.png`} alt="User Journey" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
       </div>
 
       <div className="card" style={{ marginBottom: '24px' }}>
         <h3>System Architecture</h3>
-        <img src="http://localhost:8000/static/Architecture_Flow.png" alt="Architecture Flow" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
+        <img src={`${import.meta.env.VITE_API_URL}/static/Architecture_Flow.png`} alt="Architecture Flow" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
       </div>
 
       <div className="card">

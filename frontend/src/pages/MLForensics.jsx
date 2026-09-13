@@ -40,7 +40,7 @@ export default function MLForensics() {
     formData.append('file', file);
     
     try {
-      const response = await axios.post('http://localhost:8000/api/ml-forensics', formData, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/ml-forensics`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       clearInterval(progressInterval);

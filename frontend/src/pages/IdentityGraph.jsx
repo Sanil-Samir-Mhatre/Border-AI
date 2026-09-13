@@ -10,7 +10,7 @@ export default function IdentityGraph() {
   useEffect(() => {
     const fetchGraph = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/identity-graph');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/identity-graph`);
         setGraphImg(response.data.image);
       } catch (err) {
         setError(err.message);

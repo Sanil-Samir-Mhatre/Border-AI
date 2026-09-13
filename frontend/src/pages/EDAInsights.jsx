@@ -10,7 +10,7 @@ export default function EDAInsights() {
     setLoading(true);
     setMessage('');
     try {
-      const response = await axios.post('http://localhost:8000/api/eda');
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/eda`);
       setMessage(response.data.message || 'EDA completed successfully!');
     } catch (err) {
       setMessage(err.response?.data?.detail || err.message);
@@ -37,17 +37,17 @@ export default function EDAInsights() {
       <div className="grid-1" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
         <div className="card">
           <h3>Dataset Class Distribution</h3>
-          <img src="http://localhost:8000/static/EDA_Class_Distribution.png" alt="Class Distribution" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
+          <img src={`${import.meta.env.VITE_API_URL}/static/EDA_Class_Distribution.png`} alt="Class Distribution" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
         </div>
 
         <div className="card">
           <h3>Feature Engineering & Extraction</h3>
-          <img src="http://localhost:8000/static/FeatureEngineering_Visuals.png" alt="Feature Engineering" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
+          <img src={`${import.meta.env.VITE_API_URL}/static/FeatureEngineering_Visuals.png`} alt="Feature Engineering" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
         </div>
 
         <div className="card">
           <h3>Preprocessing Enhancements</h3>
-          <img src="http://localhost:8000/static/Preprocessing_Before_After.png" alt="Preprocessing" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
+          <img src={`${import.meta.env.VITE_API_URL}/static/Preprocessing_Before_After.png`} alt="Preprocessing" style={{ width: '100%', borderRadius: '8px', marginTop: '16px' }} />
         </div>
       </div>
     </div>

@@ -22,6 +22,5 @@ COPY . .
 ENV PORT=10000
 EXPOSE $PORT
 
-# Command to run the Streamlit app
-# We use shell format so that $PORT is evaluated
-CMD streamlit run Combined_App/app.py --server.port $PORT --server.address 0.0.0.0
+# Run FastAPI with uvicorn
+CMD uvicorn Combined_App.main:app --host 0.0.0.0 --port $PORT
