@@ -20,7 +20,16 @@ export default function RealPassport() {
           title="Real Passport PDF"
         />
         <div style={{ marginTop: '16px', textAlign: 'center' }}>
-          <p>The PDF preview is unavailable? Open the application report from Google Drive instead.</p>
+          <p>The PDF preview is unavailable? Open the application report from Google Drive:</p>
+          <p>
+            <a
+              href={REAL_PASSPORT_DRIVE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {REAL_PASSPORT_DRIVE_URL}
+            </a>
+          </p>
           <a
             href={REAL_PASSPORT_DRIVE_URL}
             target="_blank"
