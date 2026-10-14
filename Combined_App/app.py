@@ -21,7 +21,8 @@ from src.rules import run_document_rules, calculate_risk_score
 
 @st.cache_resource
 def load_ocr():
-    return easyocr.Reader(['en'])
+    # Ensure EasyOCR uses GPU only if available to avoid CUDA errors on CPU-only systems
+    return easyocr.Reader(['en'], gpu=torch.cuda.is_available())
 
 @st.cache_resource
 def load_ocr_reader_multi():
@@ -505,10 +506,10 @@ elif page == "About":
     
     st.markdown("""
     ### The Journey
-    As a developer, building the Border-AI Screening System has been a journey of exploring how cutting-edge computer vision, deep learning, and graph analysis can solve critical real-world problems. The motivation stems from the growing sophistication of synthetic identity fraud and the need for robust, automated document forensics.
+    As a developer, building the Border-AI Screening System has been a journey of exploring how cutting-edge computer vision, deep learning, and graph analysis can solve critical real-world probl[...]
     
     ### Purpose
-    The primary purpose of this application is to serve as an intelligent, automated first line of defense for border control and KYC (Know Your Customer) processes. It aims to detect subtle document manipulations and highlight complex fraud rings that might evade manual inspection.
+    The primary purpose of this application is to serve as an intelligent, automated first line of defense for border control and KYC (Know Your Customer) processes. It aims to detect subtle docu[...]
     
     ### Technical Description
     This platform integrates multiple advanced AI components:
